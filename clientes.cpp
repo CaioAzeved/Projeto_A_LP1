@@ -60,7 +60,7 @@ void reclamar(){
 void menu_cli(std::map <std::string,Onibus> onibus, std::vector<std::string> nome){
     int num;
     std::cout << "Digite um dos números para realizar uma das seguintes ações." << std::endl;
-    while(num != 5){
+    while(true){
         std::cout << "1-Listar ônibus cadastrados." << std::endl;
         std::cout << "2-Buscar ônibus." << std::endl;
         std::cout << "3-Mostrar itininerário." << std::endl;
