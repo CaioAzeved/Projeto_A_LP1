@@ -15,12 +15,24 @@ void listar(std::map <std::string,Onibus> onibus, std::vector<std::string> nome)
 }
 
 
-//Função que busca um ônibus especificando a sua linha.
-void buscar_linha(std::map <std::string,Onibus> onibus){
+//Função que busca um ônibus especificando o nome da sua linha.
+void buscar_linha(std::map <std::string,Onibus> onibus, std::vector<std::string> nome){
     std::string name;
+    int fail = 0;
     std::cout << "Insira o nome da linha:" << std::endl;
-    std::cin >> name;
-    std::cout << onibus[name].terminal << std::endl;
+    std::getline(std::cin >> std::ws, name);
+    for(unsigned long long int i{0}; i < nome.size(); ++i){
+        if(nome[i] == name){
+            fail = 1;
+        }
+    }
+    if(fail != 1){
+        std::cout << "Está linha não existe, tente novamente." << std::endl;
+    }
+    else{
+        std::cout << onibus[name].terminal << std::endl;
+        std::cout << onibus[name].itinerario << std::endl;
+    }
 }
 //Função que busca um ônibus específico usando o terminal.
 void buscar_terminal(std::map <std::string,Onibus> onibus, std::vector<std::string> nome){
@@ -106,7 +118,7 @@ void menu_adm(std::map <std::string,Onibus> onibus, std::vector<std::string> nom
         }
         else if(num == 2){
             std::cout << std::endl;
-            buscar_linha(onibus);
+            buscar_linha(onibus, nome);
             std::cout << std::endl;
         }
         else if(num == 3){
