@@ -1,7 +1,3 @@
-#include <iostream>
-#include <string>
-#include <vector>
-#include <map>
 #include "admin.hpp"
 #include "clientes.hpp"
 #include "auxi.hpp"
@@ -25,7 +21,7 @@ int main() {
             std::cin >> senha;
             if(senha == "admin"){
                 menu_adm(map_onibus, nome);
-                //sob_escrever(map_onibus, nome);
+                sobrescrever(map_onibus, nome);
             }
             else{
                 std::cout << "Acesso negado!" << std::endl;

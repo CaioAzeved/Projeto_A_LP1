@@ -1,8 +1,3 @@
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <vector>
-#include <map>
 #include "onibus.hpp"
 
 //Função que lista todos os ônibus existentes.

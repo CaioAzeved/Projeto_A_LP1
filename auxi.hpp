@@ -6,6 +6,6 @@
 void ler(std::map<std::string, Onibus> &onibus, std::vector<std::string> &nome);
 
 //Função feita para sob_escrever o arquivo original sempre que um ônibus seja deletado
-void sob_escrever(std::map <std::string,Onibus> onibus, std::vector<std::string> nome);
+void sobrescrever(std::map <std::string,Onibus> onibus, std::vector<std::string> nome);
 
 #endif

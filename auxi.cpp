@@ -1,8 +1,3 @@
-#include <iostream>
-#include <string>
-#include <vector>
-#include <fstream>
-#include <map>
 #include "onibus.hpp"
 
 //função feita para ler o arquivo de ônibus.
@@ -27,14 +22,13 @@ void ler(std::map<std::string, Onibus> &onibus, std::vector<std::string> &nome){
 
 //Função feita para sob_escrever o arquivo original sempre que um ônibus seja deletado
 
-void sob_escrever(std::map <std::string,Onibus> onibus, std::vector<std::string> nome){
+void sobrescrever(std::map <std::string,Onibus> onibus, std::vector<std::string> nome){
     std::fstream excluir;
-    excluir.open("Ônibus.txt", std::ios::out);
-    for(int i = 0; nome.size(); ++i){
+    excluir.open("onibus.txt", std::ios::out);
+    for(unsigned long long int i = 0; nome.size(); ++i){
         excluir << nome[i] << std::endl;
         excluir << onibus[nome[i]].terminal << std::endl;
         excluir << onibus[nome[i]].itinerario << std::endl;
     } 
     excluir.close();
-    
 }

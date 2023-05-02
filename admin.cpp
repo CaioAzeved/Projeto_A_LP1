@@ -1,8 +1,3 @@
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <vector>
-#include <map>
 #include "onibus.hpp"
 
 //Função que lista todos os ônibus existentes.
@@ -58,7 +53,7 @@ void atualizar_terminal(std::map <std::string,Onibus> &onibus, std::vector<std::
     std::cout << "Insira o nome da linha:" << std::endl;
     std::cin >> name;
     std::cout << "Insira o novo terminal dessa linha:" << std::endl;
-    std::cin >> termi;
+    std::getline(std::cin >> std::ws, termi);
     onibus[name].terminal = termi;
 }
 
