@@ -35,7 +35,7 @@ void ver(std::map <std::string,Onibus> onibus){
     std::string name;
     std::cout << "Insira o nome da linha:" << std::endl;
     std::cin >> name;
-    std::cout << "Este é o itinerário do " << name << ":"<< std::endl;
+    std::cout << "Este é o itinerário do ônibus " << name << ":"<< std::endl;
     std::cout << onibus[name].itinerario << std::endl;
 }
 
@@ -44,14 +44,15 @@ void reclamar(){
     std::fstream reclamacoes;
     std::string Data, rec;
     reclamacoes.open("Reclamações_anônimas.txt", std::ios::out | std::ios::app);
-    std::cout << "Escreva a sua reclamação aqui:" << std::endl;
-    std::cout << "Data:" << std::endl;
+    std::cout << "Escreva a sua reclamação abaixo:" << std::endl;
+    std::cout << "Informe a data:" << std::endl;
     std::getline(std::cin >> std::ws, Data);
     reclamacoes << Data << std::endl;
-    std::cout << "Reclamação:" << std::endl;
+    std::cout << "Informe sua reclamação:" << std::endl;
     std::getline(std::cin >> std::ws, rec);
     reclamacoes << rec << std::endl;
     reclamacoes.close();
+    std::cout << "Obrigado pelo feedback, iremos fazer o possível para melhorar." << std::endl;
 }
 
 //Função que irá mostrar o menu.
