@@ -8,19 +8,19 @@
 //função feita para ler o arquivo de ônibus.
 
 void ler(std::map<std::string, Onibus> &onibus, std::vector<std::string> &nome){
-    std::vector <std::string> temp;
+    std::vector <std::string> temp{}; //string temporária
     std::fstream arquivo_ler;
     std::string linha;
     int j = 0;
-    arquivo_ler.open("Ônibus.txt", std::ios::in);
+    arquivo_ler.open("onibus.txt", std::ios::in);
     while(std::getline(arquivo_ler, linha)){
-        temp.push_back(linha);
+        nome.push_back(linha);
     }
     arquivo_ler.close();
-    for(unsigned long long int i = 0; i < temp.size(); i+=3){
-        nome[j] = temp[i];
-        onibus[nome[j]].terminal = temp[i+1];
-        onibus[nome[j]].itinerario = temp[i+2];
+    for(unsigned long long int i = 0; i < nome.size(); i+=3){
+        nome[j] = nome[i];
+        onibus[nome[j]].terminal = nome[i+1];
+        onibus[nome[j]].itinerario = nome[i+2];
         ++j;
     }
 }
