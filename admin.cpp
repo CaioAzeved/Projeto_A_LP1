@@ -50,21 +50,53 @@ void buscar_terminal(std::map <std::string,Onibus> onibus, std::vector<std::stri
 //Função que atualiza o terminal de um ônibus.
 void atualizar_terminal(std::map <std::string,Onibus> &onibus, std::vector<std::string> nome){
     std::string name, termi;
+    int fail = 0;
     std::cout << "Insira o nome da linha:" << std::endl;
     std::cin >> name;
-    std::cout << "Insira o novo terminal dessa linha:" << std::endl;
-    std::getline(std::cin >> std::ws, termi);
-    onibus[name].terminal = termi;
+    for(unsigned long long int i{0}; i < nome.size(); ++i){
+        if(nome[i] == name){
+            fail = 1;
+        }
+    }
+    if(fail != 1){
+        std::cout << "Está linha não existe, tente novamente." << std::endl;
+    }
+    else{
+        std::cout << "Insira o novo terminal dessa linha:" << std::endl;
+        std::getline(std::cin >> std::ws, termi);
+        if(onibus[name].terminal != termi){
+            std::cout << "Terminal inválido." << std::endl;
+        }
+        else{
+            onibus[name].terminal = termi;
+        }
+    }
 }
 
 //Função que atualiza o itinerário de um ônibus.
 void atualizar_itinerario(std::map <std::string,Onibus> &onibus, std::vector<std::string> nome){
     std::string name, iti;
+    int fail;
     std::cout << "Insira o nome da linha:" << std::endl;
     std::cin >> name;
-    std::cout << "Insira o novo itinerário dessa linha:" << std::endl;
-    std::getline(std::cin >> std::ws, iti);
-    onibus[name].itinerario = iti;
+    for(unsigned long long int i{0}; i < nome.size(); ++i){
+        if(nome[i] == name){
+            fail = 1;
+        }
+    }
+    if(fail != 1){
+        std::cout << "Está linha não existe, tente novamente." << std::endl;
+    }
+    else{
+        std::cout << "Insira o novo itinerário dessa linha:" << std::endl;
+        std::getline(std::cin >> std::ws, iti);
+        if(onibus[name].itinerario != iti){
+            std::cout << "Itinerário inválido." << std::endl;
+        }
+        else{
+            onibus[name].itinerario = iti;
+        }
+    }
 }
 
 //Função que exclui um ônibus.
