@@ -19,10 +19,7 @@ int main() {
         std::cout << "Digite C se for cliente e A se for administrador." << std::endl;
         std::cin >> id;
         if((id == 'C') || (id == 'c')){
-            control = menu_cli(map_onibus, nome);
-            if(control != 0){
-                break;
-            }
+            menu_cli(map_onibus, nome);
         }
         else if((id == 'A') || (id == 'a')){
             std::cout << "Insira a senha" << std::endl;

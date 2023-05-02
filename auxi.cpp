@@ -12,15 +12,15 @@ void ler(std::map<std::string, Onibus> &onibus, std::vector<std::string> &nome){
     std::fstream arquivo_ler;
     std::string linha;
     int j = 0;
-    arquivo_ler.open("onibus.txt", std::ios::in);
+    arquivo_ler.open("onibus.txt", std::ios::in | std::ios::app);
     while(std::getline(arquivo_ler, linha)){
-        nome.push_back(linha);
+        temp.push_back(linha);
     }
     arquivo_ler.close();
-    for(unsigned long long int i = 0; i < nome.size(); i+=3){
-        nome[j] = nome[i];
-        onibus[nome[j]].terminal = nome[i+1];
-        onibus[nome[j]].itinerario = nome[i+2];
+    for(unsigned long long int i = 0; i < temp.size(); i+=3){
+        nome.push_back(temp[i]);
+        onibus[nome[j]].terminal = temp[i+1];
+        onibus[nome[j]].itinerario = temp[i+2];
         ++j;
     }
 }
