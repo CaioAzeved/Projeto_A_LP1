@@ -24,7 +24,7 @@ void ler(std::map<std::string, Onibus> &onibus, std::vector<std::string> &nome){
 
 void sobrescrever(std::map <std::string,Onibus> onibus, std::vector<std::string> nome){
     std::fstream excluir;
-    excluir.open("onibus.txt", std::ios::out);
+    excluir.open("onibus.txt", std::ios::out | std::ios::trunc);
     for(unsigned long long int i = 0; i < nome.size(); ++i){
         excluir << nome[i] << std::endl;
         excluir << onibus[nome[i]].terminal << std::endl;

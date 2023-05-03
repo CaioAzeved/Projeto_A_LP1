@@ -1,4 +1,5 @@
 #include "onibus.hpp"
+#include "auxi.hpp"
 
 //Função que lista todos os ônibus existentes.
 void listar(std::map <std::string,Onibus> onibus, std::vector<std::string> nome){
@@ -69,6 +70,7 @@ void atualizar_terminal(std::map <std::string,Onibus> &onibus, std::vector<std::
         }
         else{
             onibus[name].terminal = termi;
+            sobrescrever(onibus, nome);
         }
     }
 }
@@ -95,6 +97,7 @@ void atualizar_itinerario(std::map <std::string,Onibus> &onibus, std::vector<std
         }
         else{
             onibus[name].itinerario = iti;
+            sobrescrever(onibus, nome);
         }
     }
 }
@@ -110,6 +113,7 @@ void excluir(std::map <std::string,Onibus> &onibus, std::vector<std::string> &no
             nome.erase(nome.end() - nome.size() +i);
         }
     }
+    sobrescrever(onibus, nome);
 }
 
 //Função que lista as reclamações.
