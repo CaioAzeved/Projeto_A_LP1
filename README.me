@@ -1,0 +1,21 @@
+Projeto_A (Ônibus):
+
+Esse projeto foi feito com duas interfaces. Uma para os clientes e outra para os administradores de uma empresa de ônibus.
+Na main.cpp teremos a identificação de qual usuário acessará o sistema, se for cliente ele automaticaemnte irá para o menu com todas as funcionalidades disponíveis para ele. Se for um administrador será pedido uma senha e se ela for aceita ele é mandado para o seu próprio menu também.
+Ele possui três arquivos de execução, eles são:
+1 - clientes.cpp, onde temos o menu dos clientes que dará a eles 4 opções, dentre elas temos:
+    a - Listar todos os ônibus presentes no arquivo.
+    b - Busca um ônibus usando o terminal e mostra o nome da linha.
+    c - Ver o itinerário de um ônibus usando o nome da linha.
+    d - Escrever uma reclamação anônima referente a uma viagem ou a própria empresa e esta será salva em um arquivo.
+2 - admin.cpp, onde temos o menu dos admnistradores que lhes dará 7 opções, sendo elas:
+    a - Listar todos os ônibus.
+    b - Busca um ônibus pelo nome da linha e mostra o terminal dele.
+    c - Busca um ônibus usando o terminal e mostra o nome da linha.
+    d - Atualiza o terminal de um ônibus especificando o nome da sua linha.
+    e - Atualiza o itinerário de um ônibus especificando o nome da sua linha.
+    f - Excluir um ônibus do arquivo. 
+    g - Listar todas as reclamações cadastradas no arquivo de reclamações anônimas.
+3 - auxi.cpp, onde temos duas funções auxiliares, sendo elas as seguintes:
+    a - Uma função de leitura do arquivo com as informações dos ônibus e que coloque todos os nomes das linhas em um vector e os terminais e itinerários em um map estruturado.
+    b - Uma função para sobrescrever o arquivo original com as mudanças armazenadas no map estruturado e no vector.
