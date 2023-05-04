@@ -23,11 +23,17 @@ void ler(std::map<std::string, Onibus> &onibus, std::vector<std::string> &nome){
 //Função feita para sobrescrever o arquivo original sempre que um ônibus seja deletado
 
 void sobrescrever(std::map <std::string,Onibus> onibus, std::vector<std::string> nome){
-    std::fstream excluir("onibus.txt");
+
+    std::fstream excluir;
+    remove("onibus.txt");
+    excluir.open("onibus.txt", std::ios::out);
     for(unsigned long long int i = 0; i < nome.size(); ++i){
         excluir << nome[i] << std::endl;
+        std::cout << nome[i] << std::endl;
         excluir << onibus[nome[i]].terminal << std::endl;
+        std::cout << onibus[nome[i]].terminal << std::endl;
         excluir << onibus[nome[i]].itinerario << std::endl;
+        std::cout << onibus[nome[i]].itinerario << std::endl;
     }
     excluir.close();
 }
