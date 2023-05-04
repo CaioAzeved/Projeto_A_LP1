@@ -21,7 +21,6 @@ int main() {
             std::cin >> senha;
             if(senha == "admin"){
                 menu_adm(map_onibus, nome);
-                sobrescrever(map_onibus, nome);
             }
             else{
                 std::cout << "Acesso negado!" << std::endl;

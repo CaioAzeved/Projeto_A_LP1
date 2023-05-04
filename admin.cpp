@@ -65,13 +65,8 @@ void atualizar_terminal(std::map <std::string,Onibus> &onibus, std::vector<std::
     else{
         std::cout << "Insira o novo terminal dessa linha:" << std::endl;
         std::getline(std::cin >> std::ws, termi);
-        if(onibus[name].terminal != termi){
-            std::cout << "Terminal inválido." << std::endl;
-        }
-        else{
-            onibus[name].terminal = termi;
-            sobrescrever(onibus, nome);
-        }
+        onibus[name].terminal = termi;
+        sobrescrever(onibus, nome);
     }
 }
 
@@ -92,13 +87,8 @@ void atualizar_itinerario(std::map <std::string,Onibus> &onibus, std::vector<std
     else{
         std::cout << "Insira o novo itinerário dessa linha:" << std::endl;
         std::getline(std::cin >> std::ws, iti);
-        if(onibus[name].itinerario != iti){
-            std::cout << "Itinerário inválido." << std::endl;
-        }
-        else{
-            onibus[name].itinerario = iti;
-            sobrescrever(onibus, nome);
-        }
+        onibus[name].itinerario = iti;
+        sobrescrever(onibus, nome);
     }
 }
 
