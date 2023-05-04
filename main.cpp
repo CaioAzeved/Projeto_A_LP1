@@ -4,10 +4,10 @@
 #include "onibus.hpp"
 
 int main() {
-    char id, confirm = 'Y'; //variável para identificar se é cliente ou administrador.
+    char id, confirm = 'Y'; //variável para identificar se é cliente ou administrador / variável criada para confirmação de permanecer no sistema.
     std::string senha; //variável para pegar a senha solicitada para a entrada do administrador.
     std::map <std::string, Onibus> map_onibus; //variável criada para salvar as informações de todos os ônibus.
-    std::vector<std::string> nome;
+    std::vector<std::string> nome; //variável criada para salvar os nomes das linhas dos ônibus.
     std::cout << "Identifique-se!" << std::endl;
     while(true){
         if((confirm == 'Y') || (confirm == 'y')){
